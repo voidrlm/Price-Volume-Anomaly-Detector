@@ -10,5 +10,6 @@ print("Calculating z-scores...")
 btc['zscore'] = (btc['returns'] - mean) / std
 print("Detecting anomalies...")
 anomalies = btc[btc['zscore'].abs() > 2]
+anomalies.index = anomalies.index.to_series().dt.strftime('%b %d, %I:%M %p')
 print("Anomalies found:")
 print(anomalies[['Close', 'zscore']])
