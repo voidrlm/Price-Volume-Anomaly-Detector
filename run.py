@@ -1,6 +1,6 @@
 import yfinance as yf
 print("Downloading BTC-USD data...")
-btc = yf.download('BTC-USD', period='1d', interval='1m')
+btc = yf.download('BTC-USD', period='1d', interval='5m')
 print("Calculating returns...")
 btc['returns'] = btc['Close'].pct_change()
 print("Calculating rolling mean and std...")
